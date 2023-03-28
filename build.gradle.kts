@@ -41,6 +41,9 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+	// Kafka
+	implementation("org.springframework.kafka:spring-kafka")
+	testImplementation("org.springframework.kafka:spring-kafka-test")
 }
 
 tasks.withType<KotlinCompile> {
