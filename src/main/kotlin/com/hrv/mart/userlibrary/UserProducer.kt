@@ -10,9 +10,15 @@ class UserProducer (
     private val kafkaTemplate: KafkaTemplate<String, User>
 ) {
     fun createUser(user: User) {
+        sendMessage(user, UserTopics.createUserTopic)
+    }
+    fun deleteUser(userId: String) {
+        sendMessage(userId, UserTopics.deleteUserTopic)
+    }
+    private fun <T : Any> sendMessage(data: T, topic: String) {
         val message = MessageBuilder
-            .withPayload(user)
-            .setHeader(KafkaHeaders.TOPIC, UserTopics.createUserTopic)
+            .withPayload(data)
+            .setHeader(KafkaHeaders.TOPIC, topic)
             .build()
         kafkaTemplate.send(message)
     }
