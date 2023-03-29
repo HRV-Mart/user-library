@@ -1,5 +1,6 @@
-package com.hrv.mart.userlibrary
+package com.hrv.mart.userlibrary.config
 
+import com.hrv.mart.userlibrary.model.User
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

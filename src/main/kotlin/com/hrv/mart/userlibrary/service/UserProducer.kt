@@ -1,5 +1,7 @@
-package com.hrv.mart.userlibrary
+package com.hrv.mart.userlibrary.service
 
+import com.hrv.mart.userlibrary.model.User
+import com.hrv.mart.userlibrary.model.UserTopics
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.kafka.core.reactive.ReactiveKafkaProducerTemplate
 import org.springframework.kafka.support.KafkaHeaders

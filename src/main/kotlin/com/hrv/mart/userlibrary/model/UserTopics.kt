@@ -1,4 +1,4 @@
-package com.hrv.mart.userlibrary
+package com.hrv.mart.userlibrary.model
 
 class UserTopics {
     companion object {
