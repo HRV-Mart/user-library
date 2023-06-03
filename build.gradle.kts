@@ -14,6 +14,15 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
 	mavenCentral()
+	maven {
+		name = "GitHubPackages"
+		url = uri("https://maven.pkg.github.com/hrv-mart/api-call")
+		credentials {
+			username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+			password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+		}
+	}
+
 }
 publishing {
 	repositories {
@@ -45,6 +54,8 @@ dependencies {
 	implementation("org.springframework.kafka:spring-kafka")
 	testImplementation("org.springframework.kafka:spring-kafka-test")
 	implementation("io.projectreactor.kafka:reactor-kafka")
+	// API-Call
+	implementation("com.hrv.mart:api-call:0.0.1")
 }
 
 tasks.withType<KotlinCompile> {
